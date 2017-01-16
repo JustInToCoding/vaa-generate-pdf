@@ -1,0 +1,27 @@
+{
+  "name": "vaa-generate-pdf",
+  "version": "0.0.1",
+  "description": "Generate pdf from url",
+  "main": "index.js",
+  "directories": {
+    "example": "examples",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JustInToCoding/vaa-generate-pdf.git"
+  },
+  "keywords": [
+    "generate",
+    "pdf"
+  ],
+  "author": "JustInToCoding",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JustInToCoding/vaa-generate-pdf/issues"
+  },
+  "homepage": "https://github.com/JustInToCoding/vaa-generate-pdf#readme"
+}
