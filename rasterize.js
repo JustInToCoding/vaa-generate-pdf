@@ -10,6 +10,17 @@ if (system.args.length < 3 || system.args.length > 5) {
     console.log('                                   "800px*600px" window, clipped to 800x600');
     phantom.exit(1);
 } else {
+    page.onError = function(msg, trace) {
+        var msgStack = ['ERROR: ' + msg];
+        if (trace && trace.length) {
+            msgStack.push('TRACE:');
+            trace.forEach(function(t) {
+            msgStack.push(' -> ' + t.file + ': ' + t.line + (t.function ? ' (in function "' + t.function +'")' : ''));
+            });
+        }
+        console.error(msgStack.join('\n'));
+    };
+
     address = system.args[1];
     output = system.args[2];
     page.viewportSize = { width: 600, height: 600 };
@@ -44,7 +55,7 @@ if (system.args.length < 3 || system.args.length > 5) {
                 console.log('Test!');
                 page.render(output);
                 phantom.exit();
-            }, 200);
+            }, 1000);
         }
     });
 }
